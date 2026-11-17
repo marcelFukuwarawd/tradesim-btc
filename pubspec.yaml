@@ -1,0 +1,27 @@
+name: btc_trader_sim
+description: "TradeSim BTC - Simulador de trade automático (paper trading) BTC/USDT com preços reais públicos, sem login e sem ordens reais."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.14.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  material_ui: ^1.11.1
+  cupertino_icons: ^1.0.8
+  http: ^1.2.2
+  sqflite: ^2.4.1
+  path: ^1.9.0
+  home_widget: ^0.7.0
+  flutter_local_notifications: ^18.0.1
+  timezone: ^0.10.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true

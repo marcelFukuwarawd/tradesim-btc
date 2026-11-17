@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/widget_bg"
+    android:padding="12dp"
+    android:gravity="center_vertical">
+
+    <!-- Cabeçalho: logo + nome + atualização -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:text="₿"
+            android:textColor="#1E2329"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/widget_badge" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:text="TRADESIM"
+            android:textColor="#848E9C"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.12" />
+        <LinearLayout android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
+        <TextView
+            android:id="@+id/widget_updated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="--:--"
+            android:textColor="#5E6673"
+            android:textSize="9sp"
+            android:fontFamily="monospace" />
+    </LinearLayout>
+
+    <!-- BTC/USDT -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="BTC/USDT  ·  SIMULADO"
+        android:textColor="#848E9C"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.08" />
+
+    <!-- Preço -->
+    <TextView
+        android:id="@+id/widget_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="$—"
+        android:textColor="#EAECEF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:fontFamily="monospace"
+        android:maxLines="1"
+        android:ellipsize="end" />
+
+    <!-- P&L do dia -->
+    <TextView
+        android:id="@+id/widget_pnl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Hoje: —"
+        android:textColor="#F0B90B"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:fontFamily="monospace"
+        android:maxLines="1"
+        android:ellipsize="end" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#2B3139" />
+
+    <!-- Caixa -->
+    <TextView
+        android:id="@+id/widget_cash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Caixa: $—"
+        android:textColor="#EAECEF"
+        android:textSize="11sp"
+        android:fontFamily="monospace"
+        android:maxLines="1" />
+
+    <!-- ROI -->
+    <TextView
+        android:id="@+id/widget_roi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="ROI total: —"
+        android:textColor="#EAECEF"
+        android:textSize="11sp"
+        android:fontFamily="monospace"
+        android:maxLines="1" />
+
+    <!-- Posição -->
+    <TextView
+        android:id="@+id/widget_position"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Zerado — aguardando sinal"
+        android:textColor="#848E9C"
+        android:textSize="10sp"
+        android:maxLines="2"
+        android:ellipsize="end" />
+</LinearLayout>
