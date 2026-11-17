@@ -1,0 +1,42 @@
+# TradeSim BTC — gera o APK automaticamente a cada push (e no botão "Run workflow")
+name: Build APK
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build APK (release)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@v4
+
+      - name: Instalar o Flutter (stable)
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Flutter pub get
+        run: flutter pub get
+
+      - name: Análise estática (falha o build se houver erros)
+        run: flutter analyze
+
+      - name: Testes do motor da estratégia
+        run: flutter test
+
+      - name: Gerar APK release
+        run: flutter build apk --release
+
+      - name: Publicar APK como artefato para download
+        uses: actions/upload-artifact@v4
+        with:
+          name: tradesim-btc-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+          retention-days: 90
